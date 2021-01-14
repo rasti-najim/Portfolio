@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
-import Fade from "react-reveal/Fade":
+import Fade from "react-reveal/Fade";
 
 // custom
 import NavBar from "./NavBar";
