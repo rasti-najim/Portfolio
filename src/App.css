@@ -17,26 +17,9 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.App {
+/* .App {
   display: flex;
   flex-direction: row;
   text-align: center;
   background-color: #000000;
-}
-
-.Name {
-  color: #fff;
-  font-family: "Hachi Maru Pop", cursive;
-  font-size: 44px;
-  font-weight: bolder;
-}
-
-.Icon {
-  margin-top: 30px;
-  margin-right: 10px;
-}
-
-.Icon:hover {
-  cursor: pointer;
-  transform: scale(2, 2);
-}
+} */

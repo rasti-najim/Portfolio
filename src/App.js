@@ -2,58 +2,74 @@ import React from "react";
 import styled from "styled-components";
 import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
 import Fade from "react-reveal/Fade";
+import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 
 // custom
-import NavBar from "./NavBar";
+import NavBar from "./components/NavBar";
 import logo from "./logo.svg";
 import image from "./portrait.png";
 import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div>
       <NavBar />
-      <Container>
-        <ImageContainer>
-          <Fade left duration={1000} delay={500}>
-            <img src={image} />
-          </Fade>
-        </ImageContainer>
-        <IntroContainer>
-          <Fade right duration={1000} delay={500}>
-            <Text>
-              Hello I am
-              <h1 className="Name">Rasti Najim</h1>
-              Ux Designer & Doveloper
-            </Text>
-          </Fade>
-          {/* <Button>Hire me</Button> */}
-        </IntroContainer>
-        <SocialsContainer>
-          <a
-            href="https://twitter.com/Rasti_Najim"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter className="Icon" color="#fff" />
-          </a>
-          <a
-            href="https://www.facebook.com/rasti.rasheed"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebookF className="Icon" color="#fff" />
-          </a>
-          <a
-            href="https://www.instagram.com/rasti_najim/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram className="Icon" color="#fff" />
-          </a>
-        </SocialsContainer>
-      </Container>
+      <Home />
+      <About />
+      <Portfolio />
+      <Footer />
+      {/* <Switch> */}
+      {/* <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} /> */}
+      {/* </Switch> */}
     </div>
+    // <div>
+    //   <NavBar />
+    //   <Container>
+    //     <ImageContainer>
+    //       <Fade left duration={1000} delay={500}>
+    //         <img src={image} />
+    //       </Fade>
+    //     </ImageContainer>
+    //     <IntroContainer>
+    //       <Fade right duration={1000} delay={500}>
+    //         <Text>
+    //           Hello I am
+    //           <h1 className="Name">Rasti Najim</h1>
+    //           Ux Designer & Doveloper
+    //         </Text>
+    //       </Fade>
+    //       {/* <Button>Hire me</Button> */}
+    //     </IntroContainer>
+    //     <SocialsContainer>
+    //       <a
+    //         href="https://twitter.com/Rasti_Najim"
+    //         target="_blank"
+    //         rel="noopener noreferrer"
+    //       >
+    //         <FaTwitter className="Icon" color="#fff" />
+    //       </a>
+    //       <a
+    //         href="https://www.facebook.com/rasti.rasheed"
+    //         target="_blank"
+    //         rel="noopener noreferrer"
+    //       >
+    //         <FaFacebookF className="Icon" color="#fff" />
+    //       </a>
+    //       <a
+    //         href="https://www.instagram.com/rasti_najim/"
+    //         target="_blank"
+    //         rel="noopener noreferrer"
+    //       >
+    //         <FaInstagram className="Icon" color="#fff" />
+    //       </a>
+    //     </SocialsContainer>
+    //   </Container>
+    // </div>
   );
 }
 
