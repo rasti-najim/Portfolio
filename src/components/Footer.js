@@ -8,7 +8,7 @@ import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
   return (
-    <Container>
+    <Container id="contact">
       <Title>Rasti.</Title>
       <SocialsContainer>
         <a
@@ -16,27 +16,27 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h3>
+          <h4>
             <FaTwitter className={styles.Icon} color="#000" />
-          </h3>
+          </h4>
         </a>
         <a
           href="https://www.facebook.com/rasti.rasheed"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h3>
+          <h4>
             <FaFacebookF className={styles.Icon} color="#000" />
-          </h3>
+          </h4>
         </a>
         <a
           href="https://www.instagram.com/rasti_najim/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h3>
+          <h4>
             <FaInstagram className={styles.Icon} color="#000" />
-          </h3>
+          </h4>
         </a>
       </SocialsContainer>
     </Container>

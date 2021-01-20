@@ -1,13 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
-import Fade from "react-reveal/Fade";
-import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // custom
 import NavBar from "./components/NavBar";
-import logo from "./logo.svg";
-import image from "./portrait.png";
 import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -15,9 +11,22 @@ import Portfolio from "./pages/Portfolio";
 import Footer from "./components/Footer";
 
 function App() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth >= 769) {
+      setIsDesktop(true);
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+      setIsDesktop(false);
+    }
+  }, []);
+
   return (
     <div>
-      <NavBar />
+      {isDesktop && <NavBar />}
       <Home />
       <About />
       <Portfolio />

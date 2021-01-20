@@ -1,51 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
 // custom
 import PortfolioItem from "../components/PortfolioItem";
-import image from "../kirkuk.jpeg";
+import { client } from "../client";
 
 export default function Portfolio() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    client
+      .getEntries()
+      .then((response) => {
+        console.log(response);
+        setItems(response.items);
+      })
+      .catch(console.error);
+  }, []);
   return (
-    <Container id="about">
+    <Container id="portfolio">
       <Fade>
         <Title>Portfolio</Title>
       </Fade>
-      <PortfolioItem title="Facilitator & Director, NMUNA" image={image}>
-        Mission: To bring different ethnic groups together for civil & political
-        discourse through Model UN. Partnered with the US Consulate in Erbil
-      </PortfolioItem>
-      <PortfolioItem
-        title="Iraqi Leader Exchange Program Entrant (State Dept)"
-        image={image}
-      >
-        Intensive leadership & language immersion. Lived with American host
-        family. Contributed to community projects.
-      </PortfolioItem>
-      <PortfolioItem
-        title="Translator & Editor, I Believe In Science"
-        image={image}
-      >
-        Mission: To make science accessible & simplified to people in the Middle
-        East. More than 3 million likes & followers on Facebook.
-      </PortfolioItem>
-      <PortfolioItem
-        title="Bertelsmann Tech Scholarship Recipient, Udacity"
-        image={image}
-      >
-        Received scholarship to study Deep Learning on Udacity. Program in
-        collaboration with AWS & Facebook Artificial Intelligence
-      </PortfolioItem>
-      <PortfolioItem title="Kohai, Gakko Summer Camps" image={image}>
-        Emphasis on creativity & collaboration. project-based learning. Got
-        accepted & received grant. Attended Japan's camp.
-      </PortfolioItem>
+      {items.map((item, index) => (
+        <PortfolioItem key={index} item={item} />
+      ))}
     </Container>
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 const Title = styled.h1`
   font-size: 40px;

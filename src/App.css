@@ -9,17 +9,9 @@ body {
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
   background-color: #000000;
-  text-align: center;
   -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
-
-/* .App {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  background-color: #000000;
-} */

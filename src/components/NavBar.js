@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
 
 export default function NavBar() {
+  const [active, setActive] = useState(false);
   return (
     <Container>
       <div>
-        <StyledLink>Left</StyledLink>
-      </div>
-      <div>
-        <StyledLink to="home">Home</StyledLink>
-        <StyledLink to="about" smooth duration={1000}>
-          About
-        </StyledLink>
-        <StyledLink>Projects</StyledLink>
-        <StyledLink>Contact</StyledLink>
+        <Link
+          to="home"
+          smooth
+          duration={1000}
+          onSetActive={() => setActive(true)}
+        >
+          <Button isActive={active}>Home</Button>
+        </Link>
+        <Link to="about" smooth duration={1000}>
+          <Button>About</Button>
+        </Link>
+        <Link to="portfolio" smooth duration={1000}>
+          <Button>Portfolio</Button>
+        </Link>
       </div>
     </Container>
   );
@@ -22,18 +28,17 @@ export default function NavBar() {
 
 const Container = styled.nav`
   /* position: fixed;
-  display: flex;
-  justify-content: space-between;
   z-index: 1;
   width: 100%;
   background-color: #000000; */
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 50px;
+  width: 100%;
 `;
 
-const StyledLink = styled(Link)`
+const Button = styled.span`
   text-decoration: none;
   font-size: 30px;
   background-color: #000000;
