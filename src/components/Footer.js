@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaEnvelope,
+} from "react-icons/fa";
 import Fade from "react-reveal/Fade";
 
 // custom
@@ -36,6 +41,15 @@ export default function Footer() {
         >
           <h4>
             <FaInstagram className={styles.Icon} color="#000" />
+          </h4>
+        </a>
+        <a
+          href="mailto:rastirasheed@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h4>
+            <FaEnvelope className={styles.Icon} color="#000" />
           </h4>
         </a>
       </SocialsContainer>

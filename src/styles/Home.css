@@ -1,7 +1,7 @@
-#home {
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  #home {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -15,19 +15,31 @@
   font-weight: bolder;
 }
 
+@media screen and (max-width: 768px) {
+  .Name {
+    font-size: 2.5rem;
+  }
+}
+
 .Icon {
   margin-top: 30px;
   margin-right: 10px;
-
-  @media screen and (max-width: 768px) {
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 8px;
-    margin-bottom: 5px;
-  }
 }
 
 .Icon:hover {
   cursor: pointer;
   transform: scale(2, 2);
+}
+
+@media screen and (max-width: 768px) {
+  .Icon {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .Icon:hover {
+    transform: scale(1);
+  }
 }

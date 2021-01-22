@@ -5,7 +5,7 @@ import Tilt from "react-tilt";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default function PortfolioItem({ item }) {
-  const { projectname, description, image } = item.fields;
+  const { projectname, description, image, link } = item.fields;
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -23,13 +23,18 @@ export default function PortfolioItem({ item }) {
     <ContentContainer fluid>
       <Row xs={1} sm={1} md={2}>
         <Col>
-          <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000}>
+          <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500}>
             <Title>{projectname}</Title>
             <Text>{description}</Text>
           </Fade>
         </Col>
         <Col>
-          <Fade right={isDesktop} bottom={isMobile} duration={1000} delay={500}>
+          <Fade
+            right={isDesktop}
+            bottom={isMobile}
+            duration={1000}
+            delay={1000}
+          >
             <Tilt
               options={{
                 reverse: false,
@@ -43,7 +48,9 @@ export default function PortfolioItem({ item }) {
                 easing: "cubic-bezier(.03,.98,.52,.99)",
               }}
             >
-              <Image src={image.fields.file.url} />
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                <Image src={image.fields.file.url} />
+              </a>
             </Tilt>
           </Fade>
         </Col>
@@ -56,27 +63,29 @@ const ContentContainer = styled(Container)`
   margin-bottom: 8rem;
 `;
 
-const TextContainer = styled(Col)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
-
 const Title = styled.h3`
   font-size: larger;
-  font-family: "Do Hyeon", sans-serif;
+  /* font-family: "Do Hyeon", sans-serif; */
+  font-family: "Roboto", sans-serif;
   color: #ffffff;
   margin-left: 30px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+  }
 `;
 
 const Text = styled.p`
   font-family: "Do Hyeon", sans-serif;
   color: #ffffff;
   margin-left: 30px;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+  }
 `;
 
 const Image = styled.img`
-  align-self: center;
   width: 70%;
   margin-left: 15%;
 `;

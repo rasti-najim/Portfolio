@@ -19,7 +19,7 @@ export default function NavBar() {
           <Button>About</Button>
         </Link>
         <Link to="portfolio" smooth duration={1000}>
-          <Button>Portfolio</Button>
+          <Button>What I'v done</Button>
         </Link>
       </div>
     </Container>

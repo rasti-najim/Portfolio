@@ -14,14 +14,20 @@ export default function Portfolio() {
       .getEntries()
       .then((response) => {
         console.log(response);
-        setItems(response.items);
+        const filteredItems = [];
+        response.items.forEach((item) => {
+          if (item.sys.contentType.sys.id == "portfolio") {
+            filteredItems.push(item);
+          }
+        });
+        setItems(filteredItems);
       })
       .catch(console.error);
   }, []);
   return (
     <Container id="portfolio">
       <Fade>
-        <Title>Portfolio</Title>
+        <Title>What I'v done</Title>
       </Fade>
       {items.map((item, index) => (
         <PortfolioItem key={index} item={item} />

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaEnvelope,
+} from "react-icons/fa";
 import Fade from "react-reveal/Fade";
 import ParticleImage, { forces } from "react-particle-image";
 
@@ -43,7 +48,7 @@ function Home() {
           <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500}>
             <StyledParticleImage
               src={image}
-              scale={isDesktop ? 0.9 : 1}
+              scale={0.9}
               entropy={20}
               maxParticles={4200}
               particleOptions={particleOptions}
@@ -66,9 +71,7 @@ function Home() {
               duration={1000}
               delay={1000}
             >
-              <a href="../Resume.pdf">
-                <Button>Resume</Button>
-              </a>
+              {/* <Button>Resume</Button> */}
             </Fade>
           </Fade>
         </IntroContainer>
@@ -95,6 +98,13 @@ function Home() {
             >
               <FaInstagram className="Icon" color="#fff" />
             </a>
+            <a
+              href="mailto:rastirasheed@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaEnvelope className="Icon" color="#fff" />
+            </a>
           </SocialsContainer>
         )}
       </Container>
@@ -105,21 +115,36 @@ function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaTwitter className="Icon" color="#fff" />
+            <h4>
+              <FaTwitter className="Icon" color="#fff" />
+            </h4>
           </a>
           <a
             href="https://www.facebook.com/rasti.rasheed"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFacebookF className="Icon" color="#fff" />
+            <h4>
+              <FaFacebookF className="Icon" color="#fff" />
+            </h4>
           </a>
           <a
             href="https://www.instagram.com/rasti_najim/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="Icon" color="#fff" />
+            <h4>
+              <FaInstagram className="Icon" color="#fff" />
+            </h4>
+          </a>
+          <a
+            href="mailto:rastirasheed@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h4>
+              <FaEnvelope className="Icon" color="#fff" />
+            </h4>
           </a>
         </SocialsContainer>
       )}
@@ -146,6 +171,10 @@ const Text = styled.p`
   font-size: 2.5rem;
   text-align: start;
   line-height: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 const Container = styled.div`
   display: flex;
@@ -195,6 +224,10 @@ const SocialsContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    width: auto;
   }
 `;
 

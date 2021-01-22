@@ -9,3 +9,9 @@
   cursor: pointer;
   transform: scale(2, 2);
 }
+
+@media screen and (max-width: 768px) {
+  .Icon:hover {
+    transform: scale(1);
+  }
+}
