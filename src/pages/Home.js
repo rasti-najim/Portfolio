@@ -63,7 +63,7 @@ function Home() {
             <Text>
               Hello, I am
               <h1 className="Name">Rasti Najim</h1>
-              App & Web Engineer
+              App & Web Developer
             </Text>
             <Fade
               right={isDesktop}

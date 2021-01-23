@@ -79,6 +79,10 @@ const Text = styled.p`
 const Image = styled.img`
   width: 70%;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
 
 const Button = styled.button`
@@ -92,5 +96,9 @@ const Button = styled.button`
   :hover {
     background: #000000;
     color: #ffffff;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
   }
 `;
